@@ -1,0 +1,199 @@
+@import '../../styles/main';
+
+.cart-page {
+  color: $color-primary;
+
+  &__back-button {
+    margin: 24px 0;
+
+    @include on-tablet {
+      margin: 40px 0 16px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__empty {
+    color: $color-secondary;
+    font-size: 20px;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+      @include page-grid;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    grid-column: 1 / 17;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    border: 1px solid $color-elements;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    @include hover(box-shadow, 0 2px 15px 0 #0000001a);
+  }
+
+  &__item-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include on-tablet {
+      gap: 24px;
+    }
+  }
+
+  &__remove-button {
+    @include hover(opacity, 0.5);
+  }
+
+  &__item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  &__item-link {
+    @include hover(opacity, 0.5);
+  }
+
+  &__item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__controls {
+    display: flex;
+  }
+
+  &__controls-button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-icons;
+    transition: all $effect-duration;
+
+    &--disabled {
+      color: $color-elements;
+      border-color: $color-elements;
+    }
+
+    &:not(&--disabled):hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__controls-count {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  &__item-price {
+    width: 80px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 31px;
+    text-align: right;
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    grid-column: 17 / -1;
+    height: fit-content;
+    padding: 24px;
+    border: 1px solid $color-elements;
+
+    @include on-desktop {
+      gap: 24px;
+    }
+  }
+
+  &__total-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color-elements;
+
+    @include on-desktop {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__total-price {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -1%;
+  }
+
+  &__total-count {
+    color: $color-secondary;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  &__total-order {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: $color-white;
+    background-color: $color-primary;
+
+    @include hover(box-shadow, 0 3px 13px 0 #17203166);
+  }
+}

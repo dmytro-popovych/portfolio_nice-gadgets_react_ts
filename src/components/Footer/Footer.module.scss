@@ -1,0 +1,110 @@
+@import '../../styles/main';
+
+.footer {
+  width: 100%;
+  padding-block: 32px;
+  color: $color-secondary;
+  box-shadow: 0 -1px 0 0 $color-elements;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: $mobile-horizontal-indents;
+
+    @include on-tablet {
+      flex-direction: row;
+      align-items: center;
+      padding-inline: $tablet-horizontal-indents;
+    }
+
+    @include on-desktop {
+      padding-inline: $desktop-horizontal-indents;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+  }
+
+  &__logo {
+    display: block;
+    height: auto;
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      gap: 106px;
+    }
+  }
+
+  &__navigation-item {
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color $effect-duration;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-icons;
+    transform: rotate(-90deg);
+    transition: border-color $effect-duration;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-inline: auto;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color $effect-duration;
+
+    @include on-tablet {
+      margin-inline: 0;
+    }
+
+    &:hover {
+      color: $color-primary;
+
+      .footer__button-icon {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  &__button-text {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+  }
+}

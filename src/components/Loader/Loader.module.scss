@@ -1,0 +1,31 @@
+@import '../../styles/main';
+
+$size-spinner: 60px;
+$spinner-thickness: 7px;
+
+.loader {
+  position: fixed;
+  top: calc(50% - $size-spinner / 2);
+  left: calc(50% - $size-spinner / 2);
+  z-index: 1001;
+
+  &__spinner {
+    width: $size-spinner;
+    height: $size-spinner;
+
+    border: $spinner-thickness solid rgba(0, 0, 0, 0.1);
+    border-top-color: $color-secondary;
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

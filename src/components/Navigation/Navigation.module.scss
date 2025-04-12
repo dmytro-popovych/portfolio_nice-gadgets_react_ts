@@ -1,0 +1,33 @@
+@import '../../styles/main';
+
+.nav {
+  display: none;
+  height: 100%;
+
+  @include on-tablet {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    gap: 32px;
+
+    @include on-desktop {
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $color-secondary;
+    @extend %font-uppercase;
+    @include hover(color, $color-primary);
+
+    &--active {
+      @include header-active-link;
+    }
+  }
+}
